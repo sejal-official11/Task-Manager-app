@@ -1,0 +1,122 @@
+:root {
+  --bg: #f9fafb;
+  --card: #fff;
+  --accent: #3b82f6;
+  --danger: #ef4444;
+  --muted: #6b7280;
+}
+
+/* basic reset */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg,#f9fafb,#f3f4f6);
+  color:#111;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* App layout */
+.app.fullpage{display:flex;flex-direction:column;height:100vh}
+.main-area{display:flex;flex:1;min-height:0}
+
+/* Topbar */
+.pro-topbar{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:0 20px;
+  position:sticky;
+  top:0;
+  z-index:40;
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(250,250,250,0.6));
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid rgba(15,23,42,0.06);
+}
+.topbar-left{display:flex;flex-direction:column;gap:4px}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.logo-text{font-weight:700;font-size:18px}
+.top-subtitle{font-size:13px;color:var(--muted)}
+.topbar-center{flex:1;display:flex;justify-content:center;padding:0 12px}
+.search-box{display:flex;align-items:center;gap:8px;min-width:360px;max-width:720px;width:60%}
+.search-box input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid #e6e9ee;background:rgba(255,255,255,0.9)}
+.search-box input:focus{box-shadow:0 6px 18px rgba(59,130,246,0.12);border-color:#cfe3ff}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.icon-btn{background:transparent;border:1px solid rgba(16,24,40,0.05);padding:8px;border-radius:10px;cursor:pointer}
+.avatar{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#fff,#f1f5f9);display:flex;align-items:center;justify-content:center;font-weight:700;border:1px solid #eef2f6;box-shadow:0 2px 6px rgba(12,12,40,0.04)}
+
+/* Sidebar */
+.pro-sidebar{width:260px;border-right:1px solid rgba(16,24,40,0.05);padding:16px;display:flex;flex-direction:column;gap:16px;background:linear-gradient(180deg,rgba(255,255,255,0.8),rgba(250,250,250,0.65));backdrop-filter:blur(10px)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between}
+.create-board{display:flex;gap:8px}
+.create-board input{flex:1;padding:8px;border-radius:8px;border:1px solid #ddd}
+.create-board button{padding:8px 10px;border-radius:8px}
+.sidebar-tools{display:flex;gap:8px;flex-wrap:wrap}
+.boards-list{display:flex;flex-direction:column;gap:10px;flex:1;overflow-y:auto}
+.board-item{background:rgba(255,255,255,0.9);border-radius:10px;padding:10px;box-shadow:0 1px 4px rgba(0,0,0,0.06);display:flex;justify-content:space-between;align-items:center;transition:transform 0.2s}
+.board-item:hover{transform:translateX(3px);background:#f0f6ff}
+.board-actions{display:flex;gap:4px}
+.sidebar-footer{margin-top:auto;font-size:12px;color:var(--muted)}
+
+/* Content area */
+.content{flex:1;padding:20px;overflow:auto;min-height:0}
+
+/* Dashboard */
+.dashboard-empty{display:flex;flex-direction:column;gap:16px}
+.welcome-box{background:linear-gradient(180deg,#fff,#fbfdff);padding:28px;border-radius:12px;border:1px solid #eef2f6;box-shadow:0 6px 18px rgba(12,12,40,0.04)}
+.boards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+
+/* Board view top */
+.board-view .board-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.board-view .board-top h2{margin:0}
+.search-input{padding:8px 10px;border-radius:8px;border:1px solid #e3e6ea}
+
+/* Lists */
+.lists-row{display:flex;gap:16px;align-items:flex-start;margin-top:6px;overflow:auto;padding-bottom:16px;min-height:calc(100vh - 170px)}
+.list-column{background:#fefefe;min-width:300px;max-width:320px;padding:12px;border-radius:12px;border:1px solid #f0f2f5;display:flex;flex-direction:column;max-height:calc(100vh - 220px)}
+.list-header{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.task-list{overflow:auto;padding-right:6px;flex:1}
+
+/* Task card */
+.task-card{background:var(--card);padding:12px;border-radius:10px;margin-bottom:10px;border-left:5px solid var(--accent);box-shadow:0 1px 6px rgba(0,0,0,0.06)}
+.task-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(15,23,42,0.08);transition:transform .12s ease,box-shadow .12s ease}
+.task-title{font-weight:600}
+.task-desc{font-size:13px;color:#555;margin-top:6px}
+
+/* Label pill and progress */
+.label-pill{display:inline-block;color:white;font-size:12px;padding:4px 8px;border-radius:999px;margin-bottom:8px;text-transform:capitalize}
+.progress-bar{width:100%;height:8px;background:#eef2f7;border-radius:8px;overflow:hidden;margin-top:6px}
+.progress-fill{height:100%;background:linear-gradient(90deg,#34d399,#06b6d4);border-radius:8px;width:0%}
+
+/* add task */
+.add-task{display:flex;gap:8px;margin-top:12px}
+.add-task input{flex:1;padding:8px;border-radius:8px;border:1px solid #ddd}
+
+/* buttons */
+button{background:var(--accent);border:none;color:white;padding:8px 12px;border-radius:8px;cursor:pointer}
+button.small{padding:6px 8px;font-size:13px}
+button.danger{background:var(--danger)}
+button.small[disabled]{opacity:.45;cursor:not-allowed}
+
+/* modal & form */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal{background:var(--card);padding:18px;border-radius:12px;min-width:320px;max-width:90%}
+.form-row label{font-size:13px;margin-bottom:6px;color:var(--muted)}
+.form-row input,.form-row textarea,.form-row select{width:100%;padding:8px 10px;border-radius:8px;border:1px solid #e6e9ee;resize:vertical}
+.form-row textarea{min-height:80px}
+
+/* helpers */
+.muted{color:var(--muted)}
+.empty{color:var(--muted);padding:8px}
+
+/* dark mode overrides */
+body.dark{background:linear-gradient(135deg,#0b1020,#111827);color:#e5e7eb}
+body.dark .pro-sidebar{background:linear-gradient(180deg,#0b1220,#071127);border-right:1px solid #152033}
+body.dark .board-item{background:#0f1724;color:#e5e7eb}
+body.dark .board-item:hover{background:#1e293b}
+body.dark .task-card{background:#0f1724;border-left-color:#60a5fa;box-shadow:0 6px 18px rgba(0,0,0,0.5)}
+body.dark input,body.dark textarea,body.dark select{background:#071022;border-color:#263244;color:#e5e7eb}
+body.dark .search-box input{background:#071022;border-color:#263244;color:#e5e7eb}
