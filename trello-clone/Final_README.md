@@ -63,6 +63,6 @@ It’s not a production app but more of a learning project where I tried to cove
 ## Getting Started
 
 1. Clone the repo and install:
-   git clone https://github.com/your-username/taskly.git
+   git clone https://github.com/sejal-official11/trello-clone.git
    cd trello-clone
    npm install
